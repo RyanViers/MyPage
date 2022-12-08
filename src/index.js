@@ -1,6 +1,12 @@
-import initializeApp from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js;';
+// import initializeApp from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js;';
+// import getFirestore from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 
-import getFirestore from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
+import { initializeApp } from '../@firebase/app';
+import { getFirestore } from '@firebase/firestore';
+
+const firebase = require('firebase');
+// Required for side-effects
+require('firebase/firestore');
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCRuDswIdTen_rkJbls7Kz2Z60wWbb6iDo',
