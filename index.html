@@ -4,11 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <header></header>
-  <body valign="right">
-    <b><i>sup sup sup</i></b>
+  <body>
+    <form action="" id="form">
+      <div class="form-container">
+        <label for="name" class="name-label">Enter Name:</label>
+        <input class="name" type="text" value="name" required />
+      </div>
+      <br />
+      <br />
+      <div class="form-container">
+        <label for="email" class="email-label">Enter Email:</label>
+        <input type="text" class="email" value="email" required />
+      </div>
+      <br />
+      <br />
+      <div class="form-container">
+        <label for="address" class="address-label">Enter Address:</label>
+        <input type="text" class="address" value="address" required />
+        <div class="form-container">
+          <button id="btn">Click Me</button>
+        </div>
+      </div>
+      <br />
+      <br />
+    </form>
+    <script type="module" src="/index.js"></script>
   </body>
   <footer></footer>
 </html>
