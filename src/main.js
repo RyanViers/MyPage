@@ -6,10 +6,79 @@ import {
   collection,
 } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 
-let array1 = [];
+import { Pane } from 'https://cdn.skypack.dev/tweakpane';
+import Splitting from 'https://cdn.skypack.dev/splitting';
+Splitting({
+  /* target: String selector, Element, Array of Elements, or NodeList */
+  target: '[data-splitting]',
+  /* by: String of the plugin name */
+  by: 'chars',
+  /* key: Optional String to prefix the CSS variables */
+  key: null,
+});
+
+let array1 = new Array();
 let obj = new Object();
 
+const testBtn = document.getElementById('testBtn');
+
+testBtn.addEventListener('mouseenter', (e) => {
+  e.preventDefault();
+
+  let child = document.createElement('div');
+  child.classList.add('child');
+  child.textContent = 'Hello, World!';
+  testBtn.appendChild(child);
+  setTimeout(() => {
+    testBtn.removeChild(child);
+  }, 1000);
+});
+
 let form = document.getElementById('form');
+
+const options = {
+  root: null, //null means the viewport
+  rootMargin: '0px',
+  threshold: 0.5,
+};
+
+console.log(options);
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      console.log('intersecting');
+      setTimeout(() => {
+        entry.target.style.backgroundColor = 'red';
+      }, 1000);
+      console.log(entry);
+      console.log(observer);
+    } else {
+      console.log('not intersecting');
+      entry.target.style.backgroundColor = 'blue';
+    }
+  });
+}, options);
+
+observer.observe(form);
+
+window.addEventListener('scroll', (e) => {
+  const scroll = window.scrollY;
+  if (scroll > 0) {
+    form.classList.remove('form');
+    form.classList.add('disapear');
+  } else {
+    form.classList.remove('disapear');
+    form.classList.add('form');
+  }
+});
+
+const foot = document.getElementById('footer');
+foot.addEventListener('scroll', (e) => {
+  console.log('scrolling footer');
+});
+
+observer.observe(foot);
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();

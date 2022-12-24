@@ -4,21 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/output.css" />
     <title>Document</title>
   </head>
   <header>
-    <div class="mask">
+    <div data-splitting class="mask">
       <ul class="list">
         <li class="list-item">Home</li>
         <li class="list-item">About</li>
         <li class="list-item">Contact</li>
       </ul>
     </div>
-   
   </header>
   <body>
-    <form id="form">
+    <div class="important"></div>
+    <button id="testBtn">Test</button>
+    <form class="form" id="form">
       <input
         class="name"
         type="text"
@@ -47,6 +48,7 @@
     </form>
 
     <div class="container" id="container" data-index-number="123">
+      <div data-splitting>User Info</div>
       <button id="get-btn" type="submit">Get Data</button>
       <input
         type="text"
@@ -56,29 +58,43 @@
         id="read-name"
         required
       />
-     
+
       <h1 class="read-names" id="names">Name:</h1>
       <h1 class="read-email" id="emails">Email:</h1>
       <h1 class="read-address" id="addresses">Address:</h1>
     </div>
 
     <div class="delete-container">
-      
-        <input
-          type="text"
-          class="delete-name"
-          value="name"
-          placeholder="Username"
-          id="delete-name"
-          required
-        />
-        <button id="delete-btn" >Delete</button>
-      </form>
+      <input
+        type="text"
+        class="delete-name"
+        value="name"
+        placeholder="Username"
+        id="delete-name"
+        required
+      />
+      <button id="delete-btn">Delete</button>
     </div>
 
-   
     <script type="module" src="index.js"></script>
     <script type="module" src="main.js"></script>
   </body>
-  <footer></footer>
+  <footer id="footer">
+    <div class="footer">
+      <div id="output" style="height: 200px"></div>
+      <p class="footer-text">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
+        alias laborum vel laudantium, dolorem voluptatibus officiis, mollitia
+        eaque neque quam magni quae quasi, voluptatum consectetur blanditiis
+        odio! Quidem, odit optio.
+      </p>
+    </div>
+    <div class="btn-container">
+      <form>
+        <button formaction="second.html">Second Page!</button>
+        <button formaction="pages/third.html">Third Page!</button>
+        <button formaction="pages/fourth.html">Fourth Page!</button>
+      </form>
+    </div>
+  </footer>
 </html>
